@@ -27,6 +27,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -54,13 +56,13 @@ public interface LoginApi {
         summary = "Send login request with username and password",
         responses = {
             @ApiResponse(responseCode = "200", description = "Successful operation", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))
+                @Content(mediaType = "application/json", schema = @Schema(implementation = LoginPostRequest.class))
             }),
             @ApiResponse(responseCode = "400", description = "Bad request - username or password is empty", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))
+                @Content(mediaType = "application/json", schema = @Schema(implementation = LoginPostRequest.class))
             }),
             @ApiResponse(responseCode = "401", description = "Unauthorized - Invalid username or password", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))
+                @Content(mediaType = "application/json", schema = @Schema(implementation = LoginPostRequest.class))
             })
         }
     )
@@ -70,12 +72,24 @@ public interface LoginApi {
         produces = { "application/json" },
         consumes = { "application/json" }
     )
-    
-    default ResponseEntity<String> loginPost(
+    // call the validateLogin method from the LoginPostRequest class for successful login
+    default ResponseEntity<Map<String, String>> loginPost(
         @Parameter(name = "LoginPostRequest", description = "", required = true) @Valid @RequestBody LoginPostRequest loginPostRequest
     ) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
+        Map<String, String> responseBody = new HashMap<>();
+        // Validate login credentials
+        if (loginPostRequest.validateLogin()) {
+            // Successful login
+            responseBody.put("status", "200");
+            responseBody.put("message", "Login successful for user: " + loginPostRequest.getUsername());
+            return ResponseEntity.ok(responseBody);
+        } else {
+            // Invalid credentials
+            responseBody.put("status", "401");
+            responseBody.put("message", "Invalid username or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
+        }
     }
+    
 
 }

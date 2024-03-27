@@ -105,5 +105,15 @@ public class LoginPostRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
+  // implement validateLogin method
+  // Check if username is more than 5 characters
+  // Check if password is more than 5 characters and contains both letters and numbers
+  public boolean validateLogin() {
+    if (this.username.length() > 5 && this.password.length() > 5) {
+      return this.password.matches(".*[a-zA-Z].*") && this.password.matches(".*[0-9].*");
+    }
+    return false;
+  }
 }
 
