@@ -77,18 +77,25 @@ public interface LoginApi {
         @Parameter(name = "LoginPostRequest", description = "", required = true) @Valid @RequestBody LoginPostRequest loginPostRequest
     ) {
         Map<String, String> responseBody = new HashMap<>();
+
+        // check if username or password is empty
+        if (loginPostRequest.getUsername() == null || loginPostRequest.getPassword() == null) {
+            responseBody.put("status", "400");
+            responseBody.put("message", "Bad request - username or password is empty");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
+        }
         // Validate login credentials
         if (loginPostRequest.validateLogin()) {
             // Successful login
             responseBody.put("status", "200");
             responseBody.put("message", "Login successful for user: " + loginPostRequest.getUsername());
-            return ResponseEntity.ok(responseBody);
+            return ResponseEntity.ok(responseBody);  
         } else {
             // Invalid credentials
             responseBody.put("status", "401");
             responseBody.put("message", "Invalid username or password");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
-        }
+        }   
     }
     
 
