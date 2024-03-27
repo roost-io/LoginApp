@@ -1,0 +1,63 @@
+Functional Tests
+
+Test Case 1: Test if 'username' field is editable
+- Input: Send a sequence of characters
+- Expected Result: Typed characters are displayed in 'username' field
+
+Test Case 2: Test if 'password' field is editable
+- Input: Send a sequence of characters
+- Expected Result: Typed characters are displayed in 'password' field
+
+Test Case 3: Check if 'login' button is enabled
+- Expected Result: 'Login' button should be in enabled state
+
+Test Case 4: Test valid username and valid password
+- Input: Enter a valid username and password 
+- Expected Result: User should be able to log in and redirected to the homepage
+
+Test Case 5: Test invalid username and valid password
+- Input: Enter an invalid username and a valid password
+- Expected Result: Display error message 'Invalid User'
+
+Test Case 6: Test valid username and invalid password
+- Input: Enter a valid username and an invalid password
+- Expected Result: Display error message 'Invalid Password'
+
+Test Case 7: Test invalid username and invalid password
+- Input: Enter an invalid username and an invalid password
+- Expected Result: Display error message 'Invalid User or Password'
+
+Test Case 8: Test blank username and valid password
+- Input: Leave username blank and enter valid password
+- Expected Result: Display error message 'Username is required'
+
+Test Case 9: Test valid username and blank password
+- Input: Enter valid username and leave password blank
+- Expected Result: Display error message 'Password is required'
+
+
+Non Functional Tests
+
+Test Case 1: Test response time of login page
+- Expected Result: Login page should load within acceptable time limit
+
+Test Case 2: Check if 'username' and 'password' fields are obscured for password type entries
+- Expected Result: The 'password' field should obscure the input
+
+Test Case 3: Check if 'login' button is clickable
+- Input: Click on 'Login' button
+- Expected Result: 'Login' button should be clicked
+
+Test Case 4: Detect memory leak or system crash when large input data is entered in the user field
+- Input: Enter a text of 5000 characters in the 'username' field
+- Expected Result: System should handle large input data and not crash
+
+Test Case 5: Test if login page is responsive (adapts to different screen sizes)
+- Expected Result: Login page should display correctly in various screen sizes (Desktop, laptop, tablet, mobile)
+
+Test Case 6: Test login page compatibility on different browsers
+- Input: Open login page in different browsers (Chrome, Firefox, Safari, Edge)
+- Expected Result: Login page should display and function correctly across different browsers.
+
+Test Case 7: Test login page accessibility
+- Expected Result: Login page should be accessible for users with disabilities (for example, screen reader friendly, sufficient contrast ratio for visually impaired users, etc.)

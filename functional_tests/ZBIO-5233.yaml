@@ -1,0 +1,150 @@
+openapi: "3.0.0"
+info: 
+  version: "1.0.0"
+  title: "Login API"
+  description: "The API specification for Login functionality based on given Gherkin scenarios"
+servers: 
+  - url: "http://localhost:3000"
+paths: 
+  /username: 
+    post: 
+      summary: "Send text to username field"
+      requestBody: 
+        required: true 
+        content: 
+          application/json: 
+            schema: 
+              type: "object"
+              properties: 
+                text:
+                  type: "string"
+      responses: 
+        200: 
+          description: "Successful operation"
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  text: 
+                    type: "string"
+        400:
+          description: "In case of large text (e.g. 5000 characters), system should handle it through error response or success response (if it can handle it)"
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  text: 
+                    type: "string"
+  /password:
+    post: 
+      summary: "Send text to password field"
+      requestBody: 
+        required: true 
+        content: 
+          application/json: 
+            schema: 
+              type: "object"
+              properties: 
+                text:
+                  type: "string"
+      responses: 
+        200: 
+          description: "Successful operation"
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  text: 
+                    type: "string"
+  /login:
+    put: 
+      summary: "Send login request with username and password"
+      requestBody: 
+        required: true 
+        content: 
+          application/json: 
+            schema: 
+              type: "object"
+              properties: 
+                username: 
+                  type: "string"
+                password: 
+                  type: "string"
+      responses: 
+        200: 
+          description: "Successful operation"
+          content: 
+            application/json: 
+              schema: 
+                type: "string"
+        400: 
+          description: "Bad request - username or password is empty"
+          content: 
+            application/json: 
+              schema: 
+                type: "string"
+        401: 
+          description: "Unauthorized - Invalid username or password"
+          content: 
+            application/json: 
+              schema: 
+                type: "string"
+  /login-button-status:
+    get: 
+      summary: "Check login button status"
+      responses: 
+        200: 
+          description: "Successful operation - button is enabled"
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties:
+                  status: 
+                    type: "string"
+  /login-page-load:
+    get: 
+      summary: "Check login page load"
+      responses: 
+        200: 
+          description: "Successful operation"
+  /credentials-obscured:
+    get: 
+      summary: "Check username and password fields obscured status"
+      responses: 
+        200: 
+          description: "Successful operation - fields are obscured"
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties:
+                  obscured: 
+                    type: "boolean"
+  /login-button-click:
+    get: 
+      summary: "Check if login button is clickable"
+      responses: 
+        200: 
+          description: "Successful operation"
+  /viewport:
+    get: 
+      summary: "Check login page responsiveness for different screen sizes"
+      responses: 
+        200: 
+          description: "Successful operation - page is responsive"
+  /browser-compatibility:
+    get: 
+      summary: "Check login page compatibility on different browsers"
+      responses: 
+        200: 
+          description: "Successful operation - page is compatible"
+  /accessibility:
+    get: 
+      summary: "Check login page accessibility"
+      responses: 
+        200: 
+          description: "Successful operation - page is accessible"
