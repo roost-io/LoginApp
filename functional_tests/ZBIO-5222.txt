@@ -1,0 +1,52 @@
+As you've not provided a user story, I'll create one around a user functionality of a Shopping Website and then write Test Cases for it.
+
+USER STORY:
+As an end-user, I want to create an account on the e-commerce website so that, I can save my personal, payment, and shipping details for future purchases.
+
+Functional Test Cases:
+
+1. Verify the "Create Account" button on the login page.
+   - Input: Access the e-commerce website
+   - Expected Output: “Create Account” button is visible and clickable.
+
+2. Verify user navigates to account creation page after clicking "Create Account" button.
+   - Input: Click "Create Account" button from the login page.
+   - Expected Output: User should land on the account creation page.
+
+3. Verify all fields on account creation page.
+   - Input: Access account creation page
+   - Expected Output: Fields like name, email, password, confirm password, address fields, etc. should be visible.
+
+4. Verify the form accepts valid input data.
+   - Input: Provide all correct information and press the "Submit" button.
+   - Expected Output: A new user account should be created.
+
+5. Verify the form rejects invalid input data.
+   - Input: Provide invalid or incomplete information and press the "Submit" button.
+   - Expected Output: Account creation should fail and show an appropriate error message.
+
+6. Verify newly created account by trying to log in.
+   - Input: Using new account credentials, attempt to log in.
+   - Expected Output: Login should be successful with the new user.
+
+Non-functional Test Cases:
+
+1. Verify user response time after clicking the "Submit" button with valid information.
+   - Input: Provide all correct information and press the "Submit" button.
+   - Expected Output: Response should be within an acceptable timeframe (e.g., less than 5 seconds).
+
+2. Verify the security of password field.
+   - Input: Check for password field during the account creation
+   - Expected Output: Passwords should be encrypted and invisible as asterisks or bullets.
+
+3. Verify if application is accessible and functional from different types of devices and browsers.
+   - Input: Access account creation page from various browsers and devices.
+   - Expected Output: Page should open and be functional in all tested types of browsers and devices.
+
+4. Check system behavior under peak load.
+   - Input: Register multiple new users at the same time.
+   - Expected Output: System should be able to handle the load without a crash or significant slowdown.
+   
+5. Verify user-friendly display of error messages.
+   - Input: Provide incomplete information and attempt to create an account.
+   - Expected Output: Error messages should be clear, concise and user-friendly, guiding user to rectify the issue.
