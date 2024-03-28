@@ -36,9 +36,13 @@ To get started with the Login Application, follow these steps:
 
 ```git clone https://github.com/roost-io/LoginApp.git```
 
-2. Build the project using maven.
+2. Build the project using maven:
 
-3. Run the application using the provided instructions in the project documentation.
+```mvn compile```  or  ```mvn install```
+
+3. Run the application:
+
+```mvn spring-boot:run```
 
 4. Explore the code, tests, and documentation to understand the implementation details and the AI-powered tools used in the development process.
 
