@@ -134,8 +134,15 @@ public class UsernamePostRequestSetTextTest {
     @Test
     public void testSetLongText() throws NoSuchFieldException, IllegalAccessException {
         //Arrange
-        final String text = "Long text".repeat(10000); // create a long text
-
+        final int repeatCount = 10000;
+        String singleText = "Long text";
+        StringBuilder builder = new StringBuilder();
+        
+        for (int i = 0; i < repeatCount; i++) {
+            builder.append(singleText);
+        }
+        
+        String text = builder.toString(); // This is your long text repeated 10000 times      
         //Act
         usernamePostRequest.setText(text);
 

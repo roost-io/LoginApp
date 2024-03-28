@@ -58,7 +58,7 @@ public class CredentialsObscuredGet200ResponseObscuredTest {
     CredentialsObscuredGet200Response testObject = new CredentialsObscuredGet200Response();
     testObject.setObscured(inputObscuredValue); //_Setting the value using setObscured method_
     
-    assertTrue("Obscured attribute should be set to the input boolean value", testObject.getObscured());
+    assertTrue(testObject.getObscured(), "Obscured attribute should be set to the input boolean value");
   }
 
   @Test
@@ -67,6 +67,6 @@ public class CredentialsObscuredGet200ResponseObscuredTest {
     CredentialsObscuredGet200Response testObject = new CredentialsObscuredGet200Response();
     testObject.setObscured(inputObscuredValue); //Setting the value null using setObscured method_
     
-    assertNull("Obscured attribute should be set to null", testObject.getObscured());
+    assertNull(testObject.getObscured(), "Obscured attribute should be set to null");
   }
 }

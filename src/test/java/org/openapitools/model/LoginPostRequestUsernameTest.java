@@ -59,6 +59,7 @@ NOTE: Depending on the underlying implementation, NullPointerExceptions could po
 */
 
 // ********RoostGPT********
+package org.openapitools.model;
 import org.junit.Test;
 import org.junit.Assert;
 import org.openapitools.model.LoginPostRequest;

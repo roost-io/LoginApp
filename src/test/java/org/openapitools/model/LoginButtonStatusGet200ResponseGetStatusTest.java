@@ -60,11 +60,12 @@ Validation:
 */
 
 // ********RoostGPT********
+package org.openapitools.model;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-package org.openapitools.model;
+
 
 public class LoginButtonStatusGet200ResponseGetStatusTest {
 

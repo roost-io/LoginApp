@@ -62,6 +62,7 @@ Solution: Ensure to limited the size of your StringBuilder in order to avoid buf
 */
 
 // ********RoostGPT********
+package org.openapitools.model;
 import org.junit.Test;
 import org.junit.Assert;
 import org.openapitools.model.CredentialsObscuredGet200Response;

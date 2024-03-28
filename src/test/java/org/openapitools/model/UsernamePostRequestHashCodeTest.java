@@ -60,7 +60,9 @@ Solution: Avoid deserialization of untrusted data. If this is not possible, ensu
 */
 
 // ********RoostGPT********
-  import org.junit.Assert;
+package org.openapitools.model;
+import java.util.Objects;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class UsernamePostRequestHashCodeTest {

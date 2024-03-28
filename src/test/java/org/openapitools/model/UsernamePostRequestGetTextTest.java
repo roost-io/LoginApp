@@ -54,9 +54,9 @@ Validation:
 */
 
 // ********RoostGPT********
+package org.openapitools.model;
 import org.junit.Before;
 import org.junit.Test;
-import org.openapitools.model.UsernamePostRequest;
 
 import static org.junit.Assert.*;
 

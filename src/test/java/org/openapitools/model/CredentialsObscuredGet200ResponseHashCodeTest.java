@@ -51,10 +51,11 @@ Validation:
 
 // ********RoostGPT********
 // Importing the necessary libraries
+package org.openapitools.model;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openapitools.model.CredentialsObscuredGet200Response;
+import java.util.Objects;
 
 public class CredentialsObscuredGet200ResponseHashCodeTest {
 

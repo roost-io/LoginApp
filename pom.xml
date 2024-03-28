@@ -60,13 +60,6 @@
       <version>5.2.0</version>
       <!--Dependency added by RoostGPT-->
     </dependency>
-    <dependency>
-      <groupId>org.openapitools</groupId>
-      <artifactId>openapi-tools-model</artifactId>
-      <version>1.0.0</version>
-      <scope>test</scope>
-      <!--Dependency added by RoostGPT-->
-    </dependency>
     <!--SpringDoc dependencies -->
     <dependency>
       <groupId>org.springdoc</groupId>

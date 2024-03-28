@@ -50,7 +50,12 @@ Validation:
 */
 
 // ********RoostGPT********
-@Test
+
+package org.openapitools.model;
+import org.junit.Test;
+import org.junit.Assert;
+
+public class LoginPostRequestToStringTest {
 public void testToStringImplementation() {
     boolean thrown = false;
 
@@ -64,4 +69,5 @@ public void testToStringImplementation() {
     }
 
     Assert.assertFalse("toString method is not implemented correctly in LoginPostRequest class", thrown);
+}
 }
