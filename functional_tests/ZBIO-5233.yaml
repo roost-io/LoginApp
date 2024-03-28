@@ -60,7 +60,7 @@ paths:
                   text: 
                     type: "string"
   /login:
-    put: 
+    post: 
       summary: "Send login request with username and password"
       requestBody: 
         required: true 
