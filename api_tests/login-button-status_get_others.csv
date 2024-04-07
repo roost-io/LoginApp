@@ -1,0 +1,11 @@
+email^|^password
+john.doe@gmail.com^|^password123
+jane.doe@yahoo.com^|^password456
+admin@example.com^|^adminpass789
+someone@domain.com^|^mypassword101
+example@aol.com^|^passphrase202
+empty@empty.com^|^
+test@test.com^|^testing303
+missing^|^password404
+null@null.com^|^password505
+incorrect@format.com^|^p@s$w)rd
