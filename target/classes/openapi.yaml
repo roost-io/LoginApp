@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  description: The API specification for Login functionality based on given Gherkin
+    scenarios
+  title: Login API
+  version: 1.0.0
+servers:
+- url: http://localhost:3000
+paths:
+  /username:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_username_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_username_post_request'
+          description: Successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_username_post_request'
+          description: "In case of large text (e.g. 5000 characters), system should\
+            \ handle it through error response or success response (if it can handle\
+            \ it)"
+      summary: Send text to username field
+      x-content-type: application/json
+      x-accepts: application/json
+  /password:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_username_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_username_post_request'
+          description: Successful operation
+      summary: Send text to password field
+      x-content-type: application/json
+      x-accepts: application/json
+  /login:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_login_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Bad request - username or password is empty
+        "401":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Unauthorized - Invalid username or password
+      summary: Send login request with username and password
+      x-content-type: application/json
+      x-accepts: application/json
+  /login-button-status:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_login_button_status_get_200_response'
+          description: Successful operation - button is enabled
+      summary: Check login button status
+      x-accepts: application/json
+  /login-page-load:
+    get:
+      responses:
+        "200":
+          description: Successful operation
+      summary: Check login page load
+      x-accepts: application/json
+  /credentials-obscured:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_credentials_obscured_get_200_response'
+          description: Successful operation - fields are obscured
+      summary: Check username and password fields obscured status
+      x-accepts: application/json
+  /login-button-click:
+    get:
+      responses:
+        "200":
+          description: Successful operation
+      summary: Check if login button is clickable
+      x-accepts: application/json
+  /viewport:
+    get:
+      responses:
+        "200":
+          description: Successful operation - page is responsive
+      summary: Check login page responsiveness for different screen sizes
+      x-accepts: application/json
+  /browser-compatibility:
+    get:
+      responses:
+        "200":
+          description: Successful operation - page is compatible
+      summary: Check login page compatibility on different browsers
+      x-accepts: application/json
+  /accessibility:
+    get:
+      responses:
+        "200":
+          description: Successful operation - page is accessible
+      summary: Check login page accessibility
+      x-accepts: application/json
+components:
+  schemas:
+    _username_post_request:
+      example:
+        text: text
+      properties:
+        text:
+          type: string
+      type: object
+    _credentials_obscured_get_200_response:
+      example:
+        obscured: true
+      properties:
+        obscured:
+          type: boolean
+      type: object
+    _login_button_status_get_200_response:
+      example:
+        status: status
+      properties:
+        status:
+          type: string
+      type: object
+    _login_post_request:
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      type: object
